@@ -1,0 +1,318 @@
+/* ============================
+   CSS VARIABLES (Requirement)
+   ============================ */
+:root {
+  --primary-color: #0b6b8f;     /* header & footer */
+  --secondary-color: #e8f7fb;   /* section backgrounds */
+  --text-color: #0c2b2e;        /* main text color */
+  --accent-color: #00bcd4;      /* buttons/links */
+  --spacing: 1rem;              /* consistent spacing unit */
+}
+
+/* ============================
+   GLOBAL RESET + BASE
+   ============================ */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  background: #cceeff;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* HEADER - MAIN - FOOTER */
+  grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+  min-height: 100vh;
+}
+.container { width: 90%; margin: 0 auto; }
+
+/* ============================
+   HEADER STYLING
+   ============================ */
+.site-header {
+  grid-area: header;
+  background: var(--primary-color);
+  color: white;
+  padding: var(--spacing);
+}
+.header-inner {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.main-nav a {
+  color: white;
+  margin-left: var(--spacing);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.main-nav a:hover {
+  color: var(--accent-color);
+  transform: translateY(-1px);
+  text-decoration: underline;
+}
+
+/* ============================
+   MAIN CONTENT SECTIONS
+   ============================ */
+.site-main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+.section-card {
+  background: var(--secondary-color);
+  padding: var(--spacing);
+  margin-bottom: var(--spacing);
+  border-radius: 8px;
+}
+
+/* ============================
+   IMAGE GRIDS (Responsive)
+   ============================ */
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing);
+  margin-top: var(--spacing);
+}
+.img-grid a img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; 
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.img-grid a img:hover {
+  transform: scale(1.05);
+}
+/* Make the Last image span across all columns */
+.img-grid.stretch-last a:last-child {
+  grid-column: 1 / -1;   /* span from first to last column */
+}
+.img-grid.stretch-last a:last-child img {
+  height: 300px;        
+}
+/* Make the second picture span full width
+   (used for Scenic Views, Couples) */
+.img-grid.banner-second a:nth-child(2) {
+  grid-column: 1 / -1;
+}
+
+.img-grid.banner-second a:nth-child(2) img {
+  height: 300px; /* adjust height for banner effect */
+}
+
+/* ============================
+   PACKAGES GRID
+   ============================ */
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing);
+}
+.package {
+  background: white;
+  padding: var(--spacing);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.package:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.price { font-weight: bold; }
+
+/* ============================
+   TABLE STYLING
+   ============================ */
+.packages-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--spacing);
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.packages-table th, .packages-table td {
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+.packages-table th {
+  background: var(--primary-color);
+  color: white;
+  font-weight: bold;
+}
+.packages-table tr:hover td {
+  background: var(--secondary-color);
+}
+
+/* Responsive table for small screens */
+@media (max-width: 600px) {
+  .packages-table thead { display: none; }
+  .packages-table tr { display: block; margin-bottom: 1rem; }
+  .packages-table td {
+    display: block;
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  .packages-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 1rem;
+    font-weight: bold;
+    text-align: left;
+  }
+}
+
+/* ============================
+   FORM STYLING
+   ============================ */
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  background: #fff;
+  padding: var(--spacing);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.form-row { display: flex; flex-direction: column; }
+label { font-weight: bold; margin-bottom: 0.3rem; }
+input, select, textarea {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  transition: border 0.3s ease;
+}
+input:focus, select:focus, textarea:focus {
+  border: 2px solid var(--accent-color);
+  outline: none;
+}
+.form-actions {
+  display: flex;
+  gap: var(--spacing);
+  flex-wrap: wrap;
+}
+.btn {
+  background: var(--accent-color);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn:hover { 
+  background: #0097a7;
+  transform: translateY(-2px);
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--text-color);
+  border: 1px solid #ccc;
+}
+
+/* ============================
+   FOOTER STYLING
+   ============================ */
+.site-footer {
+  grid-area: footer;
+  background: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: var(--spacing);
+}
+
+/* ============================
+   RESPONSIVE DESIGN
+   ============================ */
+/* Large Screens (>=1024px) */
+@media (min-width: 1024px) {
+  /* Explorer, Relax, Family sections */
+  .img-grid.stretch-last {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns exactly */
+    gap: var(--spacing);
+  }
+
+  /* First image: same height as second image */
+  .img-grid.stretch-last a:nth-child(1) img,
+  .img-grid.stretch-last a:nth-child(3) img {
+    height: 300px; /* same as second image */
+  }
+
+  .img-grid.stretch-last a:nth-child(2) {
+    grid-column: span 2;  /* second image spans 2 columns */
+  }
+
+  .img-grid.stretch-last a:nth-child(2) img {
+    height: 300px; /* adjust as needed */
+  }
+}
+
+/* Medium Screens (Between 768px and 1023px) */
+@media (max-width: 768px) and (max-width: 1023px) {
+  /* Target only Scenic Views and Couples grids */
+  .about-theme:nth-child(1) .img-grid,  /* Scenic Views */
+  .about-theme:nth-child(2) .img-grid { /* Couples */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+    gap: var(--spacing);
+  }
+
+  /* Stretch 4th image to cover full width fro Scenic Views */
+  .about-theme:nth-child(1) .img-grid a:nth-child(4),
+  .about-theme:nth-child(3) .img-grid a:nth-child(4) {
+    grid-column: 1 / 4; /* stretch from left to right */
+  }
+
+  /* Stretch 4th image to cover full width for Couples */
+.about-theme:nth-child(1) .img-grid a:nth-child(4), /* Scenic Views */
+.about-theme:nth-child(4) .img-grid a:nth-child(4) { /* Couples */
+  grid-column: 1 / 4; /* stretch from left to right */
+}
+
+  /* Make all images scale proportionally */
+  .about-theme:nth-child(1) .img-grid a img,
+  .about-theme:nth-child(2) .img-grid a img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+  /* ----- Explorer, Relax & Family ----- */
+  /* Ensure 2nd image fills the same height as others */
+  .img-grid.stretch-last a:nth-child(2) img {
+    height: 230px;      /* adjust to match other images */
+    object-fit: cover;
+  }
+
+  /* Stack all images in one column for small screens */
+  .img-grid.stretch-last {
+    grid-template-columns: 1fr;
+    gap: var(--spacing);
+  }
+
+/* Small Screens (<=768px) */
+@media (max-width: 768px) {
+  .header-inner { flex-direction: column; align-items: flex-start; }
+  .form-actions { flex-direction: column; }
+  .responsive-img { height: 150px; }
+}
