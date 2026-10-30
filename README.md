@@ -4,7 +4,7 @@ A responsive travel brochure for a fictional island destination, built with sema
 
 **Live demo:** https://mberry-dev.github.io/travel-brochure/
 
-![Desktop view](Screen%20Shots/Large%20Screens%20(desktop).png)
+![Desktop view](Screen%20Shots/desktop.png)
 
 ## Features
 
@@ -22,7 +22,7 @@ A responsive travel brochure for a fictional island destination, built with sema
 
 | Desktop | Tablet | Phone |
 | --- | --- | --- |
-| ![Desktop](Screen%20Shots/Large%20Screens%20(desktop).png) | ![Tablet](Screen%20Shots/Medium%20Screens%20(tablets).png) | ![Phone](Screen%20Shots/Small%20Screens%20(mobile).png) |
+| ![Desktop](Screen%20Shots/desktop.png) | ![Tablet](Screen%20Shots/tablet.png) | ![Phone](Screen%20Shots/phone.png) |
 
 ## Built With
 
