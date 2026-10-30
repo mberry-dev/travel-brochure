@@ -4,7 +4,7 @@ A responsive travel brochure for a fictional island destination, built with sema
 
 **Live demo:** https://mberry-dev.github.io/travel-brochure/
 
-![Desktop view](TravelBrochure/Screen%20Shots/Large%20Screens%20(desktop).png)
+![Desktop view](Screen%20Shots/Large%20Screens%20(desktop).png)
 
 ## Features
 
@@ -22,7 +22,7 @@ A responsive travel brochure for a fictional island destination, built with sema
 
 | Desktop | Tablet | Phone |
 | --- | --- | --- |
-| ![Desktop](TravelBrochure/Screen%20Shots/Large%20Screens%20(desktop).png) | ![Tablet](TravelBrochure/Screen%20Shots/Medium%20Screens%20(tablets).png) | ![Phone](TravelBrochure/Screen%20Shots/Small%20Screens%20(mobile).png) |
+| ![Desktop](Screen%20Shots/Large%20Screens%20(desktop).png) | ![Tablet](Screen%20Shots/Medium%20Screens%20(tablets).png) | ![Phone](Screen%20Shots/Small%20Screens%20(mobile).png) |
 
 ## Built With
 
@@ -34,12 +34,10 @@ A responsive travel brochure for a fictional island destination, built with sema
 
 ```
 travel-brochure/
-├── .github/workflows/pages.yml   # Deploys TravelBrochure/ to GitHub Pages
-└── TravelBrochure/
-    ├── index.html
-    ├── style.css
-    ├── images/                   # Gallery photos
-    └── Screen Shots/             # Desktop, tablet and phone screenshots
+├── index.html
+├── style.css
+├── images/          # Gallery photos
+└── Screen Shots/    # Desktop, tablet and phone screenshots
 ```
 
 ## Run Locally
@@ -48,11 +46,7 @@ travel-brochure/
    ```bash
    git clone https://github.com/mberry-dev/travel-brochure.git
    ```
-2. Open `TravelBrochure/index.html` in your browser.
-
-## Deployment
-
-Every push to `main` deploys the `TravelBrochure/` folder to GitHub Pages through the workflow in `.github/workflows/pages.yml`.
+2. Open `index.html` in your browser.
 
 ## Notes
 
