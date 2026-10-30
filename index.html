@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Azure Isles — Travel Brochure</title>
+  <meta name="description" content="Azure Isles: a responsive travel brochure featuring scenic views, couples getaways, adventures, spa retreats and family packages." />
+  <link rel="stylesheet" href="style.css" >
+</head>
+<body>
+  <!-- Header: brand + in-page navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Azure Isles</h1>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#packages">Packages</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main container">
+
+    <!-- About: five themed photo galleries -->
+    <section id="about" class="about section-card">
+      <h2>Discover the Azure Isles</h2>
+      <p>A hidden archipelago of sunlit beaches, breathtaking coastlines, and charming villages where culture, adventure, and beauty come together.</p>
+
+      <!-- Scenic Views (4 photos) -->
+      <article class="about-theme">
+        <h3>Scenic Views</h3>
+        <p>Marvel at the pristine beaches, crystal-clear waters, and sweeping coastlines that define the beauty of the Azure Isles.</p>
+        <div class="img-grid">
+          <a href="images/azure-isle1.jpg" target="_blank" rel="noopener noreferrer"><img src="images/azure-isle1.jpg" alt="White sand beach beneath a green volcanic peak with turquoise water" class="responsive-img"></a>
+          <a href="images/azure-isle2.jpg" target="_blank" rel="noopener noreferrer"><img src="images/azure-isle2.jpg" alt="Aerial view of a turquoise lagoon dotted with small islands and a mountainous coast" class="responsive-img"></a>
+          <a href="images/azure-isle3.jpg" target="_blank" rel="noopener noreferrer"><img src="images/azure-isle3.jpg" alt="Traveler in a sun hat overlooking a harbor town and offshore islands" class="responsive-img"></a>
+          <a href="images/azure-isle4.jpg" target="_blank" rel="noopener noreferrer"><img src="images/azure-isle4.jpg" alt="Hilltop view over a green bay and island village" class="responsive-img"></a>
+        </div>
+      </article>
+
+      <!-- Couples (4 photos) -->
+      <article class="about-theme">
+        <h3>Couples</h3>
+        <p>Escape to romantic overwater huts, celebrate intimate weddings on the beach, and cherish unforgettable sunsets together.</p>
+        <div class="img-grid">
+          <a href="images/couples1.jpg" target="_blank" rel="noopener noreferrer"><img src="images/couples1.jpg" alt="Ring of overwater bungalows connected to a resort beach by a long pier" class="responsive-img"></a>
+          <a href="images/couples2.jpg" target="_blank" rel="noopener noreferrer"><img src="images/couples2.jpg" alt="Couple sitting together on a paddleboard in calm sparkling water" class="responsive-img"></a>
+          <a href="images/couples3.jpg" target="_blank" rel="noopener noreferrer"><img src="images/couples3.jpg" alt="Newlyweds walking hand in hand from a beach wedding arch" class="responsive-img"></a>
+          <a href="images/couples4.jpg" target="_blank" rel="noopener noreferrer"><img src="images/couples4.jpg" alt="Couple embracing on a pier at sunset beside a lantern-lit gazebo" class="responsive-img"></a>
+        </div>
+      </article>
+
+      <!-- Explorer Adventure (3 photos) -->
+      <article class="about-theme">
+        <h3>Explorer Adventure</h3>
+        <p>Embark on thrilling hikes, dive beneath crystal waters to explore vibrant marine life, and uncover hidden trails on guided adventures through untouched landscapes.</p>
+        <div class="img-grid stretch-last">
+          <a href="images/explorer1.jpg" target="_blank" rel="noopener noreferrer"><img src="images/explorer1.jpg" alt="Two hikers on a grassy clifftop overlooking a coastal crater bay" class="responsive-img"></a>
+          <a href="images/explorer2.jpg" target="_blank" rel="noopener noreferrer"><img src="images/explorer2.jpg" alt="Snorkeler swimming above a coral reef among orange tropical fish" class="responsive-img"></a>
+          <a href="images/explorer3.jpg" target="_blank" rel="noopener noreferrer"><img src="images/explorer3.jpg" alt="Group of hikers with backpacks on a jungle trail" class="responsive-img"></a>
+        </div>
+      </article>
+
+      <!-- Relax & Spa (3 photos) -->
+      <article class="about-theme">
+        <h3>Relax &amp; Spa</h3>
+        <p>Indulge in rejuvenating spa treatments, lounge on private beaches, and discover serene escapes designed for ultimate relaxation.</p>
+        <div class="img-grid stretch-last">
+          <a href="images/relaxing1.jpg" target="_blank" rel="noopener noreferrer"><img src="images/relaxing1.jpg" alt="Guest receiving a massage in an open-air beachfront spa hut" class="responsive-img"></a>
+          <a href="images/relaxing2.jpg" target="_blank" rel="noopener noreferrer"><img src="images/relaxing2.jpg" alt="Guests in white robes resting on loungers in a salt-wall spa room" class="responsive-img"></a>
+          <a href="images/relaxing3.jpg" target="_blank" rel="noopener noreferrer"><img src="images/relaxing3.jpg" alt="Aerial view of a private island resort with overwater villas" class="responsive-img"></a>
+        </div>
+      </article>
+
+      <!-- Family Adventures (3 photos) -->
+      <article class="about-theme">
+        <h3>Family Adventures</h3>
+        <p>Kid-friendly activities, splashing fun at the water park, and safe spots for family adventures.</p>
+        <div class="img-grid stretch-last">
+          <a href="images/family1.jpg" target="_blank" rel="noopener noreferrer"><img src="images/family1.jpg" alt="Families floating on inner tubes down a palm-lined lazy river" class="responsive-img"></a>
+          <a href="images/family2.jpg" target="_blank" rel="noopener noreferrer"><img src="images/family2.jpg" alt="Parent and child riding a jet ski across bright blue water" class="responsive-img"></a>
+          <a href="images/family3.jpg" target="_blank" rel="noopener noreferrer"><img src="images/family3.jpg" alt="Aerial view of a beachfront resort with pools and water slides" class="responsive-img"></a>
+        </div>
+      </article>
+    </section>
+
+    <!-- Packages: pricing table (cards on phones via data-label) -->
+    <section id="packages" class="packages section-card">
+      <h2>Travel Packages</h2>
+      <p>Choose from our exclusive packages designed for scenic views, couples, explorers, those seeking relaxation, and families.</p>
+
+      <table class="packages-table">
+        <thead>
+          <tr>
+            <th>Package Name</th>
+            <th>Duration</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Package">Scenic Views</td>
+            <td data-label="Duration">3 Days / 2 Nights</td>
+            <td data-label="Price">$900</td>
+          </tr>
+          <tr>
+            <td data-label="Package">Couples Getaway</td>
+            <td data-label="Duration">5 Days / 4 Nights</td>
+            <td data-label="Price">$1,500</td>
+          </tr>
+          <tr>
+            <td data-label="Package">Explorer Adventure</td>
+            <td data-label="Duration">6 Days / 5 Nights</td>
+            <td data-label="Price">$1,800</td>
+          </tr>
+          <tr>
+            <td data-label="Package">Relax &amp; Spa Retreat</td>
+            <td data-label="Duration">7 Days / 6 Nights</td>
+            <td data-label="Price">$2,200</td>
+          </tr>
+          <tr>
+            <td data-label="Package">Family Fun Package</td>
+            <td data-label="Duration">7 Days / 6 Nights</td>
+            <td data-label="Price">$2,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Contact: inquiry form -->
+    <section id="contact" class="contact section-card">
+      <h2>Travel Inquiry</h2>
+      <p>Fill out the form to inquire about a trip.</p>
+
+      <form class="inquiry-form" id="inquiry-form" novalidate>
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+        </div>
+
+        <div class="form-row">
+          <label for="package">Choose a package</label>
+          <select id="package" name="package" required>
+            <option value="">-- Select package --</option>
+            <option value="scenic">Scenic Views</option>
+            <option value="couples">Couples Getaway</option>
+            <option value="explorer">Explorer Adventure</option>
+            <option value="relax">Relax &amp; Spa Retreat</option>
+            <option value="family">Family Fun Package</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="comments">Comments</label>
+          <textarea id="comments" name="comments" rows="5"></textarea>
+        </div>
+
+        <div class="form-row form-actions">
+          <button type="submit" class="btn submit">Submit</button>
+          <button type="reset" class="btn ghost">Reset</button>
+        </div>
+
+        <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Azure Isles Travel</p>
+    </div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Inquiry form: validate in the browser and show a confirmation.
+    // This is a static demo site, so nothing is sent to a server.
+    const form = document.getElementById('inquiry-form');
+    const statusMsg = document.getElementById('form-status');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      const name = form.elements.name.value.trim();
+      const pkg = form.elements.package.selectedOptions[0].text;
+      statusMsg.textContent = 'Thanks, ' + name + '! Your inquiry about the ' + pkg + ' package has been received.';
+      statusMsg.hidden = false;
+      statusMsg.dataset.justSubmitted = 'true';
+      form.reset();
+      statusMsg.dataset.justSubmitted = 'false';
+    });
+
+    form.addEventListener('reset', function () {
+      // Keep the confirmation visible right after a successful submit
+      if (statusMsg.dataset.justSubmitted !== 'true') statusMsg.hidden = true;
+    });
+  </script>
+</body>
+</html>

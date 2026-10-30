@@ -1,5 +1,5 @@
 /* ============================
-   CSS VARIABLES (Requirement)
+   THEME VARIABLES
    ============================ */
 :root {
   --primary-color: #0b6b8f;     /* header & footer */
@@ -20,7 +20,7 @@ body {
   background: #cceeff;
   display: grid;
   grid-template-rows: auto 1fr auto; /* HEADER - MAIN - FOOTER */
-  grid-template-areas: 
+  grid-template-areas:
     "header"
     "main"
     "footer";
@@ -29,7 +29,7 @@ body {
 .container { width: 90%; margin: 0 auto; }
 
 /* ============================
-   HEADER STYLING
+   HEADER
    ============================ */
 .site-header {
   grid-area: header;
@@ -38,7 +38,7 @@ body {
   padding: var(--spacing);
 }
 .header-inner {
-  display: flex; 
+  display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
@@ -73,7 +73,7 @@ body {
 }
 
 /* ============================
-   IMAGE GRIDS (Responsive)
+   IMAGE GRIDS
    ============================ */
 .img-grid {
   display: grid;
@@ -82,56 +82,26 @@ body {
   margin-top: var(--spacing);
 }
 .img-grid a img {
+  display: block;
   width: 100%;
   height: 200px;
-  object-fit: cover; 
+  object-fit: cover;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
 .img-grid a img:hover {
   transform: scale(1.05);
 }
-/* Make the Last image span across all columns */
+/* Last image in 3-photo galleries spans the full row as a banner */
 .img-grid.stretch-last a:last-child {
-  grid-column: 1 / -1;   /* span from first to last column */
-}
-.img-grid.stretch-last a:last-child img {
-  height: 300px;        
-}
-/* Make the second picture span full width
-   (used for Scenic Views, Couples) */
-.img-grid.banner-second a:nth-child(2) {
   grid-column: 1 / -1;
 }
-
-.img-grid.banner-second a:nth-child(2) img {
-  height: 300px; /* adjust height for banner effect */
+.img-grid.stretch-last a:last-child img {
+  height: 300px;
 }
 
 /* ============================
-   PACKAGES GRID
-   ============================ */
-.package-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--spacing);
-}
-.package {
-  background: white;
-  padding: var(--spacing);
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.package:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-.price { font-weight: bold; }
-
-/* ============================
-   TABLE STYLING
+   PACKAGES TABLE
    ============================ */
 .packages-table {
   width: 100%;
@@ -157,7 +127,7 @@ body {
   background: var(--secondary-color);
 }
 
-/* Responsive table for small screens */
+/* Stacked "card" table on small screens; labels come from data-label */
 @media (max-width: 600px) {
   .packages-table thead { display: none; }
   .packages-table tr { display: block; margin-bottom: 1rem; }
@@ -179,7 +149,7 @@ body {
 }
 
 /* ============================
-   FORM STYLING
+   INQUIRY FORM
    ============================ */
 .inquiry-form {
   display: flex;
@@ -219,7 +189,7 @@ input:focus, select:focus, textarea:focus {
   font-weight: bold;
   transition: background 0.3s ease, transform 0.2s ease;
 }
-.btn:hover { 
+.btn:hover {
   background: #0097a7;
   transform: translateY(-2px);
 }
@@ -228,9 +198,17 @@ input:focus, select:focus, textarea:focus {
   color: var(--text-color);
   border: 1px solid #ccc;
 }
+.form-status {
+  margin: 0;
+  padding: 0.8rem;
+  border-radius: 6px;
+  background: var(--secondary-color);
+  border-left: 4px solid var(--primary-color);
+  font-weight: bold;
+}
 
 /* ============================
-   FOOTER STYLING
+   FOOTER
    ============================ */
 .site-footer {
   grid-area: footer;
@@ -241,78 +219,58 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* ============================
-   RESPONSIVE DESIGN
+   RESPONSIVE LAYOUT
    ============================ */
-/* Large Screens (>=1024px) */
+
+/* Large screens (1024px and up) */
 @media (min-width: 1024px) {
-  /* Explorer, Relax, Family sections */
+  /* Explorer, Relax, Family: wide 2nd photo, full-width 3rd */
   .img-grid.stretch-last {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns exactly */
-    gap: var(--spacing);
+    grid-template-columns: repeat(3, 1fr);
   }
-
-  /* First image: same height as second image */
   .img-grid.stretch-last a:nth-child(1) img,
+  .img-grid.stretch-last a:nth-child(2) img,
   .img-grid.stretch-last a:nth-child(3) img {
-    height: 300px; /* same as second image */
+    height: 300px;
   }
-
   .img-grid.stretch-last a:nth-child(2) {
-    grid-column: span 2;  /* second image spans 2 columns */
-  }
-
-  .img-grid.stretch-last a:nth-child(2) img {
-    height: 300px; /* adjust as needed */
+    grid-column: span 2;
   }
 }
 
-/* Medium Screens (Between 768px and 1023px) */
-@media (max-width: 768px) and (max-width: 1023px) {
-  /* Target only Scenic Views and Couples grids */
-  .about-theme:nth-child(1) .img-grid,  /* Scenic Views */
-  .about-theme:nth-child(2) .img-grid { /* Couples */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 images per row */
-    gap: var(--spacing);
+/* Medium screens (769px to 1023px) */
+@media (min-width: 769px) and (max-width: 1023px) {
+  /* Scenic Views and Couples: 3 per row, 4th photo full width */
+  .about-theme:nth-of-type(1) .img-grid,
+  .about-theme:nth-of-type(2) .img-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .about-theme:nth-of-type(1) .img-grid a:nth-child(4),
+  .about-theme:nth-of-type(2) .img-grid a:nth-child(4) {
+    grid-column: 1 / -1;
+  }
+  .about-theme:nth-of-type(1) .img-grid a:nth-child(4) img,
+  .about-theme:nth-of-type(2) .img-grid a:nth-child(4) img {
+    height: 300px;
   }
 
-  /* Stretch 4th image to cover full width fro Scenic Views */
-  .about-theme:nth-child(1) .img-grid a:nth-child(4),
-  .about-theme:nth-child(3) .img-grid a:nth-child(4) {
-    grid-column: 1 / 4; /* stretch from left to right */
-  }
-
-  /* Stretch 4th image to cover full width for Couples */
-.about-theme:nth-child(1) .img-grid a:nth-child(4), /* Scenic Views */
-.about-theme:nth-child(4) .img-grid a:nth-child(4) { /* Couples */
-  grid-column: 1 / 4; /* stretch from left to right */
-}
-
-  /* Make all images scale proportionally */
-  .about-theme:nth-child(1) .img-grid a img,
-  .about-theme:nth-child(2) .img-grid a img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-}
-  /* ----- Explorer, Relax & Family ----- */
-  /* Ensure 2nd image fills the same height as others */
-  .img-grid.stretch-last a:nth-child(2) img {
-    height: 230px;      /* adjust to match other images */
-    object-fit: cover;
-  }
-
-  /* Stack all images in one column for small screens */
+  /* Explorer, Relax, Family: 2 side by side, 3rd full width */
   .img-grid.stretch-last {
-    grid-template-columns: 1fr;
-    gap: var(--spacing);
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-/* Small Screens (<=768px) */
+/* Small screens (768px and below) */
 @media (max-width: 768px) {
   .header-inner { flex-direction: column; align-items: flex-start; }
   .form-actions { flex-direction: column; }
   .responsive-img { height: 150px; }
+
+  /* Explorer, Relax, Family: stack in one column */
+  .img-grid.stretch-last {
+    grid-template-columns: 1fr;
+  }
+  .img-grid.stretch-last a:nth-child(2) img {
+    height: 230px;
+  }
 }
